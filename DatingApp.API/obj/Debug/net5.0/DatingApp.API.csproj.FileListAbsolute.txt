@@ -102,3 +102,7 @@ D:\GitHub\DatingApp\DatingApp.API\obj\Debug\net5.0\DatingApp.API.dll
 D:\GitHub\DatingApp\DatingApp.API\obj\Debug\net5.0\ref\DatingApp.API.dll
 D:\GitHub\DatingApp\DatingApp.API\obj\Debug\net5.0\DatingApp.API.pdb
 D:\GitHub\DatingApp\DatingApp.API\obj\Debug\net5.0\DatingApp.API.genruntimeconfig.cache
+D:\GitHub\DatingApp\DatingApp.API\bin\Debug\net5.0\Microsoft.IdentityModel.JsonWebTokens.dll
+D:\GitHub\DatingApp\DatingApp.API\bin\Debug\net5.0\Microsoft.IdentityModel.Logging.dll
+D:\GitHub\DatingApp\DatingApp.API\bin\Debug\net5.0\Microsoft.IdentityModel.Tokens.dll
+D:\GitHub\DatingApp\DatingApp.API\bin\Debug\net5.0\System.IdentityModel.Tokens.Jwt.dll
