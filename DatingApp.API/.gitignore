@@ -1,4 +1,7 @@
 .vscode
 bin
+obj/
 obj
+Debug/
 *.db
+*.cache
