@@ -109,3 +109,16 @@ D:\GitHub\DatingApp\DatingApp.API\obj\Debug\net5.0\ref\DatingApp.API.dll
 D:\GitHub\DatingApp\DatingApp.API\obj\Debug\net5.0\DatingApp.API.pdb
 D:\GitHub\DatingApp\DatingApp.API\obj\Debug\net5.0\DatingApp.API.genruntimeconfig.cache
 D:\GitHub\DatingApp\DatingApp.API\obj\Debug\net5.0\DatingApp.API.csprojAssemblyReference.cache
+D:\GitHub\DatingApp\DatingApp.API\bin\Debug\net5.0\Data\UserSeedData.json
+D:\GitHub\DatingApp\DatingApp.API\bin\Debug\net5.0\Newtonsoft.Json.dll
+D:\GitHub\DatingApp\DatingApp.API\bin\Debug\net5.0\Microsoft.AspNetCore.Connections.Abstractions.dll
+D:\GitHub\DatingApp\DatingApp.API\bin\Debug\net5.0\Microsoft.AspNetCore.Http.Features.dll
+D:\GitHub\DatingApp\DatingApp.API\bin\Debug\net5.0\Microsoft.AspNetCore.JsonPatch.dll
+D:\GitHub\DatingApp\DatingApp.API\bin\Debug\net5.0\Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
+D:\GitHub\DatingApp\DatingApp.API\bin\Debug\net5.0\Microsoft.AspNetCore.SignalR.Common.dll
+D:\GitHub\DatingApp\DatingApp.API\bin\Debug\net5.0\Microsoft.AspNetCore.SignalR.Protocols.NewtonsoftJson.dll
+D:\GitHub\DatingApp\DatingApp.API\bin\Debug\net5.0\Microsoft.Extensions.Primitives.dll
+D:\GitHub\DatingApp\DatingApp.API\bin\Debug\net5.0\Newtonsoft.Json.Bson.dll
+D:\GitHub\DatingApp\DatingApp.API\bin\Debug\net5.0\System.IO.Pipelines.dll
+D:\GitHub\DatingApp\DatingApp.API\bin\Debug\net5.0\AutoMapper.dll
+D:\GitHub\DatingApp\DatingApp.API\bin\Debug\net5.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll

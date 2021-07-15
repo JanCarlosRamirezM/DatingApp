@@ -5,13 +5,17 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Diagnostics;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.IdentityModel.Tokens;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Serialization;
 using System.Net;
 using System.Text;
+using AutoMapper;
 
 namespace DatingApp.API
 {
@@ -28,7 +32,10 @@ namespace DatingApp.API
         public void ConfigureServices(IServiceCollection services)
         {
 
-            services.AddControllers();
+            services.AddControllersWithViews()
+                .AddNewtonsoftJson(options =>
+                                 options.SerializerSettings.ReferenceLoopHandling
+                                 = Newtonsoft.Json.ReferenceLoopHandling.Ignore);
 
             // ConnectionDB
             services.AddDbContext<DataContext>(opt => opt.UseSqlite(Configuration.GetConnectionString("DefaultConnection")));
@@ -36,8 +43,15 @@ namespace DatingApp.API
             // Enable Cors
             services.AddCors();
 
+            services.AddAutoMapper(typeof(Startup));
+
+            services.AddTransient<Seed>();
+
             // Registering Auth Services 
             services.AddScoped<IAuthRepository, AuthRepository>();
+
+            // Registering Dating Services 
+            services.AddScoped<IDatingRepository, DatingRepository>();
 
             // Registering Authentication
             services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJwtBearer(opt =>
@@ -55,7 +69,7 @@ namespace DatingApp.API
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env, Seed seed)
         {
             if (env.IsDevelopment())
             {
@@ -81,7 +95,6 @@ namespace DatingApp.API
             app.UseRouting();
             app.UseAuthentication();
             app.UseAuthorization();
-
             app.UseCors(crs => crs.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader());
 
             app.UseEndpoints(endpoints =>
