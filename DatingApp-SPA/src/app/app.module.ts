@@ -12,11 +12,11 @@ import { RegisterComponent } from "./components/register/register.component";
 import { HomeComponent } from "./components/home/home.component";
 
 import { ErrorInterceptorProvider } from "./interceptor/error.service";
-import { MemberListComponent } from "./components/member-list/member-list.component";
 import { ListsComponent } from "./components/lists/lists.component";
 import { MessagesComponent } from "./components/messages/messages.component";
 import { appRoutes } from "./routes";
 import { AuthGuard } from "./guards/auth.guard";
+import { MemberListComponent } from "./components/member-list/member-list.component";
 
 @NgModule({
   declarations: [

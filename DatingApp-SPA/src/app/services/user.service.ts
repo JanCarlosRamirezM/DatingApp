@@ -5,8 +5,8 @@ import { Observable } from "rxjs";
 import { IUser } from "../models/user";
 
 const httpOptions = {
-  headers: new HttpHeaders({
-    Authorization: "Bearer " + localStorage.getItem("token"),
+  headers:  new HttpHeaders({
+    Authorization: "Bearer " +  localStorage.getItem("token"),
   }),
 };
 
@@ -19,6 +19,8 @@ export class UserService {
   constructor(private _HttpClient: HttpClient) {}
 
   getUsers(): Observable<IUser[]> {
+    console.log(httpOptions);
+
     return this._HttpClient.get<IUser[]>(this.baseUrl, httpOptions);
   }
 

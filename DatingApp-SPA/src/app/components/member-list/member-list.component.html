@@ -1,9 +1,26 @@
 <div class="container">
   <div class="row">
-    <div class="col-lg-2 col-md-3 col-sm-6">
-      <p *ngFor="let user of users">{{user.knownAs}}</p>
+    <div *ngFor="let user of users" class="col-lg-2 col-md-3 col-sm-6">
+      <div class="card mt-5">
+        <div class="card-img-wrapper">
+          <img
+            src="{{user.photoUrl}}"
+            class="card-img-top"
+            alt="user.userName"
+          />
+        </div>
+
+        <div class="card-body">
+          <h6 class="card-title text-center mb-1">
+            <i class="fa fa-user"></i>
+            {{user.knownAs}}, {{user.userName}}
+          </h6>
+
+          <p class="card-text text-muted text-center">
+            {{user.city}}
+          </p>
+        </div>
+      </div>
     </div>
   </div>
 </div>
-
-

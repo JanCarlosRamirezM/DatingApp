@@ -1,7 +1,7 @@
-import { Component, OnInit } from "@angular/core";
-import { IUser } from "../../models/user";
+import { Component, Input, OnInit } from "@angular/core";
 import { UserService } from "../../services/user.service";
 import { AlertifyService } from "../../services/alertify.service";
+import { IUser } from "../../models/user";
 
 @Component({
   selector: "app-member-list",
@@ -10,7 +10,7 @@ import { AlertifyService } from "../../services/alertify.service";
 })
 export class MemberListComponent implements OnInit {
   users: IUser[] = [];
-
+ 
   constructor(
     private _UserService: UserService,
     private _AlertifyService: AlertifyService
