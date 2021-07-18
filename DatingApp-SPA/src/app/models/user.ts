@@ -1,6 +1,6 @@
 import { IPhoto } from "./photo";
 
-export interface User {
+export interface IUser {
   id: number;
   userName: string;
   knownAs: string;
