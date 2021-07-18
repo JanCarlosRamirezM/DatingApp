@@ -1,16 +1,16 @@
-import { Injectable } from '@angular/core';
+import { Injectable } from "@angular/core";
 import {
   HttpEvent,
   HttpHandler,
   HttpInterceptor,
   HttpRequest,
-} from '@angular/common/http';
-import { Observable, throwError } from 'rxjs';
-import { HTTP_INTERCEPTORS, HttpErrorResponse } from '@angular/common/http';
-import { catchError } from 'rxjs/operators';
+} from "@angular/common/http";
+import { Observable, throwError } from "rxjs";
+import { HTTP_INTERCEPTORS, HttpErrorResponse } from "@angular/common/http";
+import { catchError } from "rxjs/operators";
 
 @Injectable({
-  providedIn: 'root',
+  providedIn: "root",
 })
 export class ErrorService implements HttpInterceptor {
   intercept(
@@ -22,23 +22,23 @@ export class ErrorService implements HttpInterceptor {
 
   errorMethod(error: HttpErrorResponse) {
     if (error instanceof HttpErrorResponse) {
-      const applicationError = error.headers.get('Application-Error');
+      const applicationError = error.headers.get("Application-Error");
 
       if (applicationError) {
         return throwError(applicationError);
       }
       const serverError = error.error;
-      let modelStateErrors = '';
- 
+      let modelStateErrors = "";
 
-      if (serverError && typeof serverError === 'object') {
+      if (serverError && typeof serverError === "object") {
         for (const key in serverError) {
           if (serverError[key]) {
-            modelStateErrors += serverError[key] + '\n';
+            modelStateErrors += serverError[key] + "\n";
           }
         }
       }
-      return throwError(modelStateErrors || serverError || 'Server error');
+
+      return throwError(modelStateErrors || serverError || "Server error");
     } else {
       return throwError(error);
     }
