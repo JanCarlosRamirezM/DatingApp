@@ -17,7 +17,9 @@ import { ListsComponent } from "./components/lists/lists.component";
 import { MessagesComponent } from "./components/messages/messages.component";
 import { appRoutes } from "./routes";
 import { AuthGuard } from "./guards/auth.guard";
-import { MemberListComponent } from "./components/member-list/member-list.component";
+import { MemberListComponent } from "./components/member/member-list/member-list.component";
+import { MemberDetailComponent } from './components/member/member-detail/member-detail.component';
+import { MemberCardComponent } from './components/member/member-card/member-card.component';
 
 export function tokenGetter() {
   return localStorage.getItem("token");
@@ -32,6 +34,8 @@ export function tokenGetter() {
     MemberListComponent,
     ListsComponent,
     MessagesComponent,
+    MemberDetailComponent,
+    MemberCardComponent,
   ],
   imports: [
     BrowserModule,

@@ -1,7 +1,6 @@
-import { IPhoto } from "./photo";
+import { IPhoto } from "./IPhoto";
 
 export interface IUser {
-  id: number;
   userName: string;
   knownAs: string;
   age: number;
@@ -11,6 +10,7 @@ export interface IUser {
   photoUrl: string;
   city: string;
   country: string;
+  id?: number;
   interests?: string;
   introduction?: string;
   lookingFor?: string;
