@@ -1,9 +1,10 @@
-import { Routes, RouterModule } from "@angular/router";
+import { Routes } from "@angular/router";
 import { HomeComponent } from "./components/home/home.component";
 import { MessagesComponent } from "./components/messages/messages.component";
 import { ListsComponent } from "./components/lists/lists.component";
 import { AuthGuard } from "./guards/auth.guard";
 import { MemberListComponent } from "./components/member/member-list/member-list.component";
+import { MemberDetailComponent } from "./components/member/member-detail/member-detail.component";
 
 export const appRoutes: Routes = [
   { path: "", component: HomeComponent },
@@ -16,6 +17,11 @@ export const appRoutes: Routes = [
         path: "members",
         component: MemberListComponent,
       },
+      {
+        path: "members/:id",
+        component: MemberDetailComponent,
+      },
+
       {
         path: "messages",
         component: MessagesComponent,
