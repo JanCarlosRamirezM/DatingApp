@@ -1,33 +1,20 @@
-import { Component, Input, OnInit } from "@angular/core";
-import { UserService } from "../../../services/user.service";
-import { AlertifyService } from "../../../services/alertify.service";
+import { Component, Input, OnInit } from '@angular/core';
 import { IUser } from '../../../interfaces/IUser';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
-  selector: "app-member-list",
-  templateUrl: "./member-list.component.html",
-  styleUrls: ["./member-list.component.css"],
+  selector: 'app-member-list',
+  templateUrl: './member-list.component.html',
+  styleUrls: ['./member-list.component.css'],
 })
 export class MemberListComponent implements OnInit {
   users: IUser[] = [];
 
-  constructor(
-    private _UserService: UserService,
-    private _AlertifyService: AlertifyService
-  ) {}
+  constructor(private activatedRoute: ActivatedRoute) {}
 
   ngOnInit(): void {
-    this.loadUsers();
-  }
-
-  loadUsers() {
-    this._UserService.getUsers().subscribe(
-      (users: IUser[]) => {
-        this.users = users;
-      },
-      (error) => {
-        this._AlertifyService.error(error);
-      }
-    );
+    this.activatedRoute.data.subscribe((data) => {
+      this.users = data['users'];
+    });
   }
 }
