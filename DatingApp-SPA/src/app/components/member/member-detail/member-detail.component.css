@@ -13,3 +13,8 @@
   background-color: #fff;
   border-top: none;
 }
+
+.img-carousel {
+  width: 95% !important;
+  height: 25rem !important;
+}

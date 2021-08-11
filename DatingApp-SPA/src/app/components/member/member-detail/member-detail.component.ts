@@ -14,6 +14,7 @@ export class MemberDetailComponent implements OnInit {
   ngOnInit(): void {
     this.activatedRoute.data.subscribe((data) => {
       this.user = data['user'];
+
     });
   }
 }

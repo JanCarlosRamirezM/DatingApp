@@ -41,7 +41,6 @@
     <div class="col-sm-8">
       <div class="tab-panel">
         <tabset class="member-tabset">
-
           <tab heading="About {{user.knownAs}}">
             <h4>Description</h4>
             <p>{{user.introduction}}</p>
@@ -52,7 +51,53 @@
             <h4>Interests</h4>
             <p>{{user.interests}}</p>
           </tab>
-          <tab heading="Photos"> </tab>
+          <tab heading="Photos">
+            <div
+              id="carouselExampleInterval"
+              class="carousel slide"
+              data-bs-ride="carousel"
+            >
+              <div class="carousel-inner">
+                <div class="carousel-item active">
+                  <img
+                    src="{{user.photoUrl}}"
+                    class="d-block img-carousel img-fluid"
+                  />
+                </div>
+
+                <div *ngFor="let photo of user.photos" class="carousel-item">
+                  <img
+                    src="{{photo.url}}"
+                    class="d-block img-carousel img-fluid"
+                  />
+                </div>
+              </div>
+              <button
+                class="carousel-control-prev"
+                type="button"
+                data-bs-target="#carouselExampleInterval"
+                data-bs-slide="prev"
+              >
+                <span
+                  class="carousel-control-prev-icon"
+                  aria-hidden="true"
+                ></span>
+                <span class="visually-hidden">Previous</span>
+              </button>
+              <button
+                class="carousel-control-next"
+                type="button"
+                data-bs-target="#carouselExampleInterval"
+                data-bs-slide="next"
+              >
+                <span
+                  class="carousel-control-next-icon"
+                  aria-hidden="true"
+                ></span>
+                <span class="visually-hidden">Next</span>
+              </button>
+            </div>
+          </tab>
           <tab heading="Message"> </tab>
         </tabset>
       </div>
